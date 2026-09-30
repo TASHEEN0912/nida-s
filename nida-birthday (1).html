@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Nida 🎂</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--night:#120e1a;--glow:#ffd9a0;--rose:#ff7eb6;--plum:#3b1d4a;--cream:#fff4e6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;font-family:"Baloo 2","Segoe UI",system-ui,sans-serif;background:var(--night);color:#cbbfe0;
+transition:background 1.4s ease,color 1.4s ease;display:flex;justify-content:center;text-align:center}
+body.lit{background:radial-gradient(circle at 50% 18%,#ffe9c4 0%,#ffb9d6 55%,#c98ae0 100%);color:var(--plum)}
+main{width:100%;max-width:520px;padding:28px 20px 60px;display:flex;flex-direction:column;align-items:center;gap:20px}
+.bulb{font-size:96px;line-height:1;filter:grayscale(1) brightness(.5);transition:filter 1s,transform 1s;margin-top:8vh}
+body.lit .bulb{filter:none;transform:scale(.7) translateY(-10px);margin-top:2vh;text-shadow:0 0 40px var(--glow)}
+.hint{margin:0;font-size:18px;opacity:.8}
+button{font:inherit;font-weight:700;font-size:20px;border:0;border-radius:999px;padding:14px 32px;cursor:pointer;
+background:var(--rose);color:#fff;box-shadow:0 8px 24px rgba(255,126,182,.35);transition:transform .15s}
+button:active{transform:scale(.94)}
+button:focus-visible{outline:3px solid var(--glow);outline-offset:3px}
+#stage{min-height:150px;display:flex;flex-direction:column;align-items:center;gap:10px}
+#big{font-size:84px;line-height:1;animation:pop .5s cubic-bezier(.3,1.6,.5,1)}
+#msg{font-size:24px;font-weight:700;min-height:36px;margin:0}
+#row{font-size:30px;letter-spacing:4px;word-break:break-all;min-height:40px}
+#card{background:var(--cream);border-radius:28px;padding:28px 22px;box-shadow:0 20px 60px rgba(59,29,74,.3);text-align:center;display:none}
+#card.show{display:block;animation:pop .7s ease}
+#card h1{margin:0 0 6px;font-size:34px;font-weight:800;color:#d6336c}
+#card p{margin:12px 0;font-size:19px;line-height:1.55}
+#card .name{font-size:26px;font-weight:800;color:#d6336c}
+.dua{background:#ffe3ef;border-radius:18px;padding:14px 16px}
+.hidden{display:none}
+#tapBtn.dodge{position:fixed;z-index:5;transition:left .35s ease,top .35s ease}
+@keyframes pop{from{transform:scale(.2);opacity:0}to{transform:scale(1);opacity:1}}
+.cf{position:fixed;top:-30px;font-size:24px;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <div class="bulb" id="bulb">💡</div>
+  <p class="hint" id="hint">Nida, tumhare liye ek surprise hai 🤫</p>
+  <button id="lightBtn">Light on 💡</button>
+
+  <div id="stage" class="hidden">
+    <div id="big"></div>
+    <p id="msg"></p>
+  </div>
+  <div id="row"></div>
+  <button id="tapBtn" class="hidden">Tap tap</button>
+  <button id="readyBtn" class="hidden">Are u ready? 🎁</button>
+
+  <section id="card">
+    <h1>Happy Birthday! 🎂🎉</h1>
+    <div class="name">Nida Bajwa Sahab 👑💖</div>
+    <p>Meri pyari bestie 🥹 tum sirf dost nahi, meri family ho. Tumhari hansi meri sab tensions door kar deti hai 😂❤️</p>
+    <p>Aaj tumhara din hai, toh aaj tum queen ho aur baqi sab tumhari prajaa 👸😜 (treat pakki hai, bhaagna mat! 🍰🍕)</p>
+    <p class="dua">🤲 Allah tumhein hamesha khush rakhe, tumhari umar mein barkat de, sehat aur imaan ki daulat de. Tumhari har jaiz dua qabool ho, har khwab poora ho, aur tumhare ghar mein hamesha rehmat aur sukoon rahe. Aameen ya Rabbul Aalameen 🌸🤍</p>
+    <p>Allah tumhein kabhi kisi ki buri nazar na lage, tumhare raste asaan ho, aur tumhein wo sab mile jo tumhare liye behtareen ho ✨🌙</p>
+    <p>Bas hamesha aisi hi rehna: pagal, pyari aur sab se alag 🤪💕 Tum meri zindagi ka sab se khoobsurat tohfa ho 🎁</p>
+    <p class="name">Love you loads, Nida baja... ohh nahi nahi, Bajwa Sahab! 😆🫡💝</p>
+    <p style="font-size:34px">🎈🎂🎁🥳🌹✨</p>
+  </section>
+</main>
+
+<script>
+const $=id=>document.getElementById(id);
+const items=[
+ ["🎈","Oye hoye! Kaun aya? 👀"],
+ ["🥳","Party shuru! 🎶"],
+ ["🍰","Cake kahan hai?! 😋"],
+ ["🎁","Gift toh banta hai! 😎"],
+ ["👑","Queen ka din hai aaj! 💅"],
+ ["🌹","Ek phool tumhare naam 💐"],
+ ["😂","Sab se pagal dost 🤪"],
+ ["🤲","Dil se dua 🤍"]
+];
+let i=0,typing=null;
+function type(el,text){clearInterval(typing);el.textContent="";let k=0;const ch=[...text];
+ typing=setInterval(()=>{el.textContent+=ch[k++]||"";if(k>=ch.length)clearInterval(typing)},45)}
+function confetti(n){const e=["🎉","🎊","✨","💖","🎈","🌸"];for(let j=0;j<n;j++){const s=document.createElement("span");
+ s.className="cf";s.textContent=e[j%e.length];s.style.left=Math.random()*100+"vw";
+ s.style.animationDuration=(3+Math.random()*3)+"s";document.body.appendChild(s);setTimeout(()=>s.remove(),6500)}}
+
+$("lightBtn").onclick=()=>{
+ document.body.classList.add("lit");
+ $("lightBtn").classList.add("hidden");
+ type($("hint"),"Surprise! 🎉");
+ setTimeout(()=>{$("stage").classList.remove("hidden");$("tapBtn").classList.remove("hidden")},1200);
+};
+let dodges=0;
+const dodgeMsgs=["Arey! Button bhaag gaya 😜","Pakro pakro! 🏃‍♀️","Itni jaldi nahi 😝","Ek aur koshish! 💪","Bas ab pakad hi lo 😅"];
+function dodge(){
+ const b=$("tapBtn"),w=b.offsetWidth,h=b.offsetHeight;
+ b.classList.add("dodge");
+ b.style.left=(10+Math.random()*(innerWidth-w-20))+"px";
+ b.style.top=(80+Math.random()*(innerHeight-h-100))+"px";
+ dodges++;
+}
+$("tapBtn").onclick=()=>{
+ if(dodges<5){dodge();return}
+ if(dodges===5){dodges++;const b=$("tapBtn");b.classList.remove("dodge");b.style.left=b.style.top="";}
+ const [em,m]=items[i];
+ $("big").textContent=em;$("big").style.animation="none";void $("big").offsetWidth;$("big").style.animation="";
+ type($("msg"),m);$("row").textContent+=em;i++;
+ if(i>=items.length){$("tapBtn").classList.add("hidden");$("readyBtn").classList.remove("hidden")}
+};
+$("readyBtn").onclick=()=>{
+ $("readyBtn").classList.add("hidden");$("stage").classList.add("hidden");$("hint").classList.add("hidden");
+ $("card").classList.add("show");$("card").scrollIntoView({behavior:"smooth",block:"start"});confetti(40);
+};
+</script>
+</body>
+</html>
